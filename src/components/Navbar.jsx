@@ -5,35 +5,43 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-3">
+    <header className="sticky top-0 z-50 border-b border-navy-200/80 bg-white/95 text-navy-900 shadow-[0_8px_30px_rgba(26,40,55,0.10)] backdrop-blur-xl">
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-navy-900 via-copper-400 to-navy-500"
+      />
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8">
+        <Link to="/" className="group flex min-w-0 items-center gap-3 sm:gap-4">
           <span
             aria-hidden="true"
-            className="relative h-16 w-24 shrink-0 overflow-hidden"
+            className="relative h-16 w-[4.5rem] shrink-0 overflow-hidden rounded-xl border border-slate-100 bg-white shadow-[0_4px_14px_rgba(11,25,44,0.10)] sm:h-[4.5rem]"
           >
             <img
               src="/Pheonix_Image.png"
               alt=""
-              className="absolute left-[-49px] top-[-52px] mix-blend-multiply"
-              style={{ width: 200, height: 200, maxWidth: "none" }}
+              className="absolute left-[-34px] top-[-39px] max-w-none transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+              style={{ width: 140, height: 140, maxWidth: "none" }}
             />
           </span>
           <div className="min-w-0">
-            <div className="font-serif text-lg leading-tight text-slate-900 sm:text-xl">
+            <div className="truncate font-serif text-lg leading-tight text-navy-900 sm:text-2xl">
               Phoenix Advisory
             </div>
-            <div className="mt-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-slate-500 sm:text-[10px]">
+            <div className="mt-1 hidden text-[9px] font-bold uppercase tracking-[0.17em] text-navy-500 sm:block sm:text-[10px]">
               Financial & Business Advisory
             </div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+        <nav className="hidden items-center gap-8 text-sm font-semibold text-navy-700 md:flex">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-navy-700" : "hover:text-slate-900"
+              `relative py-2 transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:bg-gradient-to-r after:from-navy-900 after:to-copper-400 after:transition-transform after:duration-300 motion-reduce:after:transition-none ${
+                isActive
+                  ? "text-navy-900 after:scale-x-100"
+                  : "text-navy-700 after:scale-x-0 hover:text-navy-900 hover:after:scale-x-100"
+              }`
             }
           >
             Home
@@ -41,7 +49,11 @@ export default function Navbar() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              isActive ? "text-navy-700" : "hover:text-slate-900"
+              `relative py-2 transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:bg-gradient-to-r after:from-navy-900 after:to-copper-400 after:transition-transform after:duration-300 motion-reduce:after:transition-none ${
+                isActive
+                  ? "text-navy-900 after:scale-x-100"
+                  : "text-navy-700 after:scale-x-0 hover:text-navy-900 hover:after:scale-x-100"
+              }`
             }
           >
             Services
@@ -49,7 +61,11 @@ export default function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-navy-700" : "hover:text-slate-900"
+              `relative py-2 transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:bg-gradient-to-r after:from-navy-900 after:to-copper-400 after:transition-transform after:duration-300 motion-reduce:after:transition-none ${
+                isActive
+                  ? "text-navy-900 after:scale-x-100"
+                  : "text-navy-700 after:scale-x-0 hover:text-navy-900 hover:after:scale-x-100"
+              }`
             }
           >
             About
@@ -57,7 +73,11 @@ export default function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "text-navy-700" : "hover:text-slate-900"
+              `relative py-2 transition-colors duration-200 after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 after:origin-left after:bg-gradient-to-r after:from-navy-900 after:to-copper-400 after:transition-transform after:duration-300 motion-reduce:after:transition-none ${
+                isActive
+                  ? "text-navy-900 after:scale-x-100"
+                  : "text-navy-700 after:scale-x-0 hover:text-navy-900 hover:after:scale-x-100"
+              }`
             }
           >
             Contact
@@ -67,15 +87,19 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 md:flex">
           <a
             href="tel:+917981054165"
-            className="text-sm font-medium text-slate-600 hover:text-slate-900"
+            className="text-sm font-semibold text-navy-700 transition hover:text-copper-500"
           >
             +91 79810 54165
           </a>
           <a
             href="/contact#lead-form"
-            className="inline-flex items-center rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-navy-700"
+            className="group relative inline-flex items-center overflow-hidden rounded-full bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_6px_18px_rgba(26,40,55,0.22)] transition duration-300 hover:-translate-y-0.5 hover:bg-navy-800 hover:shadow-[0_10px_24px_rgba(26,40,55,0.28)] motion-reduce:transform-none"
           >
-            Book Consultation
+            <span
+              aria-hidden="true"
+              className="absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-[450%] motion-reduce:transition-none"
+            />
+            <span className="relative">Book Consultation</span>
           </a>
         </div>
 
@@ -85,9 +109,25 @@ export default function Navbar() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
           onClick={() => setIsMenuOpen((open) => !open)}
-          className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-navy-200 bg-navy-50 text-navy-900 shadow-sm transition hover:border-copper-300 hover:bg-copper-100 md:hidden"
         >
-          {isMenuOpen ? "Close" : "Menu"}
+          <span aria-hidden="true" className="flex w-5 flex-col gap-1.5">
+            <span
+              className={`h-0.5 w-full rounded-full bg-current transition ${
+                isMenuOpen ? "translate-y-2 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full rounded-full bg-current transition ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-full rounded-full bg-current transition ${
+                isMenuOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
+            />
+          </span>
         </button>
       </div>
 
@@ -95,7 +135,7 @@ export default function Navbar() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="space-y-1 border-t border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 md:hidden"
+          className="absolute inset-x-3 top-[calc(100%+0.5rem)] space-y-1 rounded-2xl border border-navy-100 bg-white p-3 text-sm font-medium text-navy-800 shadow-[0_24px_70px_rgba(9,24,39,0.18)] md:hidden"
         >
           {[
             ["Home", "/"],
@@ -108,10 +148,10 @@ export default function Navbar() {
               to={to}
               onClick={() => setIsMenuOpen(false)}
               className={({ isActive }) =>
-                `block rounded-lg px-3 py-3 ${
+                `block rounded-xl px-4 py-3 transition ${
                   isActive
-                    ? "bg-navy-50 text-navy-800"
-                    : "hover:bg-slate-50 hover:text-slate-900"
+                    ? "bg-copper-100 text-navy-900"
+                    : "hover:bg-navy-50 hover:text-copper-500"
                 }`
               }
             >
@@ -120,14 +160,14 @@ export default function Navbar() {
           ))}
           <a
             href="tel:+917981054165"
-            className="block rounded-lg px-3 py-3 hover:bg-slate-50"
+            className="block rounded-xl px-4 py-3 text-navy-700 transition hover:bg-navy-50 hover:text-copper-500"
           >
             Call +91 79810 54165
           </a>
           <a
             href="/contact#lead-form"
             onClick={() => setIsMenuOpen(false)}
-            className="mt-2 block rounded-full bg-navy-900 px-5 py-3 text-center font-semibold text-white hover:bg-navy-700"
+            className="mt-2 block rounded-xl bg-navy-900 px-5 py-3.5 text-center font-semibold text-white shadow-lg shadow-navy-950/15 transition hover:bg-copper-400"
           >
             Book Consultation
           </a>

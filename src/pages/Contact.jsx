@@ -8,14 +8,14 @@ export default function Contact() {
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy-700">
           Contact
         </p>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+        <h1 className="mt-3 text-3xl font-bold tracking-tight text-navy-900 sm:text-5xl">
           Speak with an advisor who understands your business.
         </h1>
       </div>
 
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="rounded-[2rem] bg-navy-900 p-8 text-white shadow-[0_25px_50px_rgba(9,29,52,0.18)]">
-          <h2 className="text-2xl font-semibold">Reach us</h2>
+          <h2 className="text-2xl font-semibold text-white">Reach us</h2>
           <div className="mt-8 space-y-6 text-sm text-slate-300">
             <div>
               <div className="text-slate-400">Email</div>

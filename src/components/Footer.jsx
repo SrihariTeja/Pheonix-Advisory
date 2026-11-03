@@ -35,7 +35,7 @@ export default function Footer() {
               <p>tejakammili9710@gmail.com</p>
               <a
                 href="tel:+917981054165"
-                className="block transition hover:text-white"
+                className="block transition hover:text-copper-300"
               >
                 +91 79810 54165
               </a>

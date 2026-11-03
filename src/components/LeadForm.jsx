@@ -111,7 +111,7 @@ export default function LeadForm({
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy-700">
           Consultation request
         </p>
-        <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900">
+        <h2 className="mt-2 text-2xl font-bold tracking-tight text-navy-900">
           {title}
         </h2>
         <p className="mt-2 text-sm text-slate-600">{description}</p>
@@ -235,7 +235,7 @@ export default function LeadForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded-full bg-navy-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-navy-700 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            className="w-full rounded-full bg-copper-400 px-6 py-3 text-sm font-semibold text-white transition hover:bg-copper-300 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
             {isSubmitting ? "Sending..." : "Submit request"}
           </button>

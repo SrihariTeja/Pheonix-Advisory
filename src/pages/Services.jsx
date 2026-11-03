@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import MagneticCTA from "../components/MagneticCTA"
 
 const serviceGroups = [
   {
@@ -250,9 +250,18 @@ export default function Services() {
 
   return (
     <main>
-      <header className="relative overflow-hidden bg-navy-950 text-white">
-        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
-          <div className="max-w-3xl motion-safe:animate-[reveal-up_700ms_ease-out_both]">
+      <header className="relative isolate overflow-hidden bg-navy-950 text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 mesh-glow opacity-80"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-36 -top-32 h-96 w-96 rounded-full bg-copper-400/20 blur-3xl motion-safe:animate-[float-glow_14s_ease-in-out_infinite]"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-navy-950/85 via-navy-900/75 to-navy-800/65" />
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-[1fr_auto] md:items-end lg:px-8">
+          <div className="relative max-w-3xl motion-safe:animate-[reveal-up_700ms_ease-out_both]">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-copper-300">
               Phoenix Advisory <span className="px-2 text-white/40">/</span>
               Service directory
@@ -267,25 +276,34 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="flex items-end gap-4 border-t border-white/15 pt-5 md:border-t-0 md:pb-1 md:pl-10">
-            <span className="font-serif text-7xl leading-none text-copper-300 sm:text-8xl">
+          <div className="metallic-border glass-panel relative flex items-center gap-5 rounded-3xl p-5 sm:p-6 md:mb-1">
+            <span className="font-serif text-6xl leading-none text-copper-200 sm:text-7xl">
               08
             </span>
-            <p className="pb-1 text-xs font-medium uppercase leading-5 tracking-[0.16em] text-white/70">
-              Expert disciplines
-              <span className="block text-white">40 specialist services</span>
-            </p>
+            <div className="border-l border-white/20 pl-5">
+              <p className="text-xs font-semibold uppercase leading-5 tracking-[0.16em] text-slate-300">
+                Expert disciplines
+              </p>
+              <p className="mt-1 text-base font-semibold text-white">
+                40 specialist services
+              </p>
+            </div>
           </div>
         </div>
       </header>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
+      <section className="relative isolate overflow-hidden px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 mesh-glow opacity-25"
+        />
+        <div className="relative mx-auto max-w-7xl">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-3 motion-safe:animate-[reveal-up_600ms_ease-out_both]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-navy-700">
               Explore our expertise
             </p>
-            <h2 className="mt-2 text-2xl text-slate-900 sm:text-3xl">
+            <h2 className="mt-2 text-2xl text-navy-900 sm:text-3xl">
               Built around what matters to you.
             </h2>
           </div>
@@ -294,10 +312,10 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid gap-8 border-t border-slate-200 pt-6 md:grid-cols-[minmax(15rem,0.78fr)_minmax(0,1.7fr)] md:gap-12">
+        <div className="metallic-border ambient-glass grid gap-6 rounded-[2rem] p-4 shadow-[0_24px_70px_rgba(16,43,70,0.09)] sm:p-6 md:grid-cols-[minmax(15rem,0.78fr)_minmax(0,1.7fr)] md:gap-8 lg:p-8">
           <nav
             aria-label="Service categories"
-            className="grid grid-cols-2 gap-x-2 gap-y-1 sm:grid-cols-4 md:flex md:flex-col"
+            className="grid grid-cols-2 gap-2 sm:grid-cols-4 md:flex md:flex-col"
           >
             {serviceGroups.map((group, index) => {
               const isSelected = selectedGroupIndex === index
@@ -308,20 +326,28 @@ export default function Services() {
                   type="button"
                   aria-pressed={isSelected}
                   onClick={() => setSelectedGroupIndex(index)}
-                  className={`group min-w-0 border-l-2 px-3 py-3 text-left transition sm:px-4 md:py-4 ${
+                  className={`group relative min-w-0 overflow-hidden rounded-xl border px-3 py-3 text-left transition duration-300 sm:px-4 md:rounded-r-xl md:rounded-l-lg md:border-l-[3px] md:border-y-0 md:border-r-0 md:py-4 ${
                     isSelected
-                      ? "border-copper-400 bg-navy-50 text-navy-950"
-                      : "border-transparent text-slate-600 hover:border-navy-300 hover:bg-white hover:text-navy-900"
+                      ? "border-copper-300 bg-navy-900 text-white shadow-[0_10px_24px_rgba(16,43,70,0.20)] md:border-copper-400"
+                      : "border-navy-200/80 bg-white/65 text-slate-700 hover:border-copper-300 hover:bg-white hover:text-navy-950 hover:shadow-[0_8px_20px_rgba(16,43,70,0.08)] md:border-transparent"
                   }`}
                 >
+                  {isSelected ? (
+                    <span
+                      aria-hidden="true"
+                      className="absolute inset-0 mesh-glow opacity-70"
+                    />
+                  ) : null}
                   <span
-                    className={`mb-1 block text-[11px] font-semibold tracking-[0.12em] ${
-                      isSelected ? "text-copper-500" : "text-slate-400"
+                    className={`relative mb-1 block text-[11px] font-semibold tracking-[0.12em] ${
+                      isSelected
+                        ? "text-copper-200"
+                        : "text-slate-500 group-hover:text-copper-600"
                     }`}
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="block text-sm font-semibold leading-snug">
+                  <span className="relative block text-sm font-semibold leading-snug">
                     {group.title}
                   </span>
                 </button>
@@ -330,18 +356,19 @@ export default function Services() {
           </nav>
 
           <section
+            key={selectedGroupIndex}
             aria-live="polite"
             aria-labelledby={`service-group-${selectedGroupIndex + 1}`}
-            className="min-w-0"
+            className="min-w-0 motion-safe:animate-[reveal-up_450ms_ease-out_both]"
           >
-            <div className="flex flex-wrap items-end justify-between gap-3 border-b border-slate-200 pb-5">
+            <div className="flex flex-wrap items-end justify-between gap-3 border-b border-navy-200/70 pb-5">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-copper-500">
                   Discipline {String(selectedGroupIndex + 1).padStart(2, "0")}
                 </p>
                 <h2
                   id={`service-group-${selectedGroupIndex + 1}`}
-                  className="mt-2 text-2xl text-navy-950 sm:text-3xl"
+                  className="mt-2 text-2xl text-navy-900 sm:text-3xl"
                 >
                   {selectedGroup.title}
                 </h2>
@@ -351,22 +378,26 @@ export default function Services() {
               </span>
             </div>
 
-            <ul className="grid gap-x-8 sm:grid-cols-2">
+            <ul className="grid gap-4 pt-5 sm:grid-cols-2">
               {selectedGroup.items.map((item, index) => (
                 <li
                   key={item.title}
-                  className="border-b border-slate-200 py-5 motion-safe:animate-[reveal-up_500ms_ease-out_both]"
-                  style={{ animationDelay: `${index * 55}ms` }}
+                  className="metallic-border ambient-glass group relative overflow-hidden rounded-2xl p-5 shadow-[0_10px_28px_rgba(16,43,70,0.06)] transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_40px_rgba(16,43,70,0.13)] motion-safe:animate-[reveal-up_500ms_ease-out_both] motion-reduce:transform-none motion-reduce:transition-none"
+                  style={{ animationDelay: `${index * 65}ms` }}
                 >
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-[11px] font-semibold text-copper-500">
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-navy-800 via-copper-400 to-navy-500 transition-transform duration-300 group-hover:scale-x-100 motion-reduce:transition-none"
+                  />
+                  <div className="flex items-center gap-3">
+                    <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-navy-200/70 bg-white/80 text-[11px] font-bold text-navy-700 transition duration-300 group-hover:scale-105 group-hover:border-copper-300 group-hover:bg-navy-900 group-hover:text-copper-200 motion-reduce:transform-none motion-reduce:transition-none">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="text-[15px] font-semibold text-navy-950">
+                    <h3 className="text-[15px] font-bold leading-snug text-navy-950">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="mt-2 pl-7 text-sm leading-6 text-slate-600">
+                  <p className="mt-3 text-sm leading-6 text-slate-700">
                     {item.description}
                   </p>
                 </li>
@@ -374,11 +405,16 @@ export default function Services() {
             </ul>
           </section>
         </div>
+        </div>
       </section>
 
-      <section className="border-t border-navy-800 bg-navy-900 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-9 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
-          <div>
+      <section className="relative isolate overflow-hidden border-t border-navy-800 bg-navy-950 text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 mesh-glow opacity-80"
+        />
+        <div className="relative mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8 lg:py-12">
+          <div className="motion-safe:animate-[reveal-up_600ms_ease-out_both]">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-copper-300">
               A good place to start
             </p>
@@ -386,15 +422,15 @@ export default function Services() {
               Let’s make your next move a confident one.
             </h2>
           </div>
-          <Link
-            to="/contact#lead-form"
-            className="inline-flex w-fit items-center border-b border-copper-300 py-2 text-sm font-semibold text-copper-200 transition hover:text-white"
+          <MagneticCTA
+            href="/contact#lead-form"
+            className="min-h-12 bg-copper-400 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-navy-950/30 hover:bg-copper-300 hover:shadow-[0_0_30px_rgba(226,160,110,0.35)]"
           >
             Talk to an advisor{" "}
             <span aria-hidden="true" className="ml-3">
               &#8594;
             </span>
-          </Link>
+          </MagneticCTA>
         </div>
       </section>
     </main>

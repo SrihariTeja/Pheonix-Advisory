@@ -10,7 +10,7 @@ export default function Testimonials({ teamImgs = assets.team }) {
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy-700">
           Client stories
         </p>
-        <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
           Trusted by businesses that expect precision.
         </h2>
       </div>

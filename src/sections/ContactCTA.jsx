@@ -1,14 +1,19 @@
 import React from "react"
+import MagneticCTA from "../components/MagneticCTA"
 
 export default function ContactCTA() {
   return (
-    <div className="rounded-[2rem] bg-gradient-to-r from-navy-950 via-navy-800 to-navy-600 p-8 text-white shadow-[0_28px_60px_rgba(9,29,52,0.22)] sm:p-10">
+    <div className="metallic-border relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-r from-navy-950 via-navy-800 to-navy-600 p-8 text-white shadow-[0_28px_60px_rgba(9,29,52,0.22)] sm:p-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 mesh-glow opacity-60"
+      />
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-2xl">
+        <div className="relative max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-copper-200">
             Let’s plan ahead
           </p>
-          <h3 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+          <h3 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Your next strategic decision deserves expert guidance.
           </h3>
           <p className="mt-3 text-sm leading-7 text-slate-200">
@@ -16,12 +21,12 @@ export default function ContactCTA() {
             resilience with Phoenix Advisory.
           </p>
         </div>
-        <a
+        <MagneticCTA
           href="/contact#lead-form"
-          className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-navy-900 transition hover:bg-canvas"
+          className="relative shrink-0 bg-copper-400 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-navy-950/25 hover:bg-copper-300 hover:shadow-[0_0_30px_rgba(226,160,110,0.4)]"
         >
           Schedule a call
-        </a>
+        </MagneticCTA>
       </div>
     </div>
   )

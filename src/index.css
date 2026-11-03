@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", "Segoe UI", sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --color-navy-50: #f1f4f8;
+  --color-navy-100: #e2e8ef;
+  --color-navy-200: #c3cfde;
+  --color-navy-300: #9badc5;
+  --color-navy-400: #7188a6;
+  --color-navy-500: #526c8d;
+  --color-navy-600: #3b5577;
+  --color-navy-700: #2a4262;
+  --color-navy-800: #1b314f;
+  --color-navy-900: #112844;
+  --color-navy-950: #091d34;
+  --color-copper-100: #f8eee8;
+  --color-copper-200: #efd9cb;
+  --color-copper-300: #d8aa8c;
+  --color-copper-400: #c7835e;
+  --color-copper-500: #a65c3b;
+  --color-canvas: #f8f9fa;
+  --color-canvas-soft: #f0f2f4;
+}
+
+:root {
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1a2837;
+  background: #f8f9fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2 {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
